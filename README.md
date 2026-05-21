@@ -32,7 +32,9 @@ Both scripts run the **identical** test command, only the tsx version differs:
 node --test-reporter spec --import=tsx[-good|-bad]/esm --test 'src/**/*.test.ts'
 ```
 
-## Why it breaks
+The error only occurs with Node version 24, if I run `nvm use 22` before `npm run test:bad`, the tests pass just fine.
+
+## Why it breaks (this section is AI generate, so it might not be the actual reason)
 
 `statuses` ships a plain JSON file (`node_modules/statuses/codes.json`).  
 Starting in 4.21.1, tsx's ESM loader began applying its esbuild transform pipeline

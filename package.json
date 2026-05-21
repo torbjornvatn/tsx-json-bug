@@ -4,7 +4,6 @@
   "description": "Minimal reproduction: tsx v4.21.1 breaks JSON imports (statuses/codes.json)",
   "type": "module",
   "scripts": {
-    "test": "node --test-reporter spec  --import=tsx/esm --test 'src/**/*.test.ts'",
     "test:good": "node --test-reporter spec  --import=tsx-good/esm --test 'src/**/*.test.ts'",
     "test:bad": "node --test-reporter spec  --import=tsx-bad/esm  --test 'src/**/*.test.ts'"
   },
