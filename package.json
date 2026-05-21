@@ -14,7 +14,7 @@
   "devDependencies": {
     "tsx-bad": "npm:tsx@4.21.1",
     "tsx-good": "npm:tsx@4.21.0",
-    "@types/node": "^25.9.1",
+    "@types/node": "^24.10.9",
     "@types/statuses": "^2.0.6"
   }
 }
