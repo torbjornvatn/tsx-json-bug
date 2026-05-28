@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test:good": "node --test-reporter spec  --import=tsx-good/esm --test 'src/**/*.test.ts'",
-    "test:bad": "node --test-reporter spec  --import=tsx-bad/esm  --test 'src/**/*.test.ts'"
+    "test:bad": "node --test-reporter spec  --import=tsx-bad/esm  --test 'src/**/*.test.ts'",
+    "test:latest": "node --test-reporter spec  --import=tsx-latest/esm  --test 'src/**/*.test.ts'"
   },
   "dependencies": {
     "statuses": "^2.0.2"
@@ -13,6 +14,7 @@
   "devDependencies": {
     "tsx-bad": "npm:tsx@4.21.1",
     "tsx-good": "npm:tsx@4.21.0",
+    "tsx-latest": "npm:tsx@v4.22.3",
     "@types/node": "^24.10.9",
     "@types/statuses": "^2.0.6"
   }
