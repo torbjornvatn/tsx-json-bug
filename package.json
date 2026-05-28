@@ -1,21 +1,23 @@
 {
   "name": "tsx-json-bug",
   "version": "1.0.0",
-  "description": "Minimal reproduction: tsx v4.21.1 breaks JSON imports (statuses/codes.json)",
+  "description": "Minimal reproduction: tsx breaks CJS node_modules require() resolution (superagent) on Node 24+",
   "type": "module",
   "scripts": {
     "test:good": "node --test-reporter spec  --import=tsx-good/esm --test 'src/**/*.test.ts'",
     "test:bad": "node --test-reporter spec  --import=tsx-bad/esm  --test 'src/**/*.test.ts'",
-    "test:latest": "node --test-reporter spec  --import=tsx-latest/esm  --test 'src/**/*.test.ts'"
+    "test:latest": "node --test-reporter spec  --import=tsx-latest/esm  --test 'src/**/*.test.ts'",
+    "test:pr": "node --test-reporter spec  --import=tsx-pr/esm      --test 'src/**/*.test.ts'"
   },
   "dependencies": {
-    "statuses": "^2.0.2"
+    "superagent": "^10.3.0"
   },
   "devDependencies": {
+    "@types/node": "^24.10.9",
+    "@types/superagent": "^8.1.10",
     "tsx-bad": "npm:tsx@4.21.1",
     "tsx-good": "npm:tsx@4.21.0",
     "tsx-latest": "npm:tsx@v4.22.3",
-    "@types/node": "^24.10.9",
-    "@types/statuses": "^2.0.6"
+    "tsx-pr": "file:../tsx-fix"
   }
 }
