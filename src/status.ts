@@ -1,4 +1,5 @@
 import request from 'superagent';
+import archiverUtils from 'archiver-utils';
 
 /**
  * Fetch a URL and return the parsed JSON body.
@@ -11,4 +12,11 @@ import request from 'superagent';
 export async function fetchJson(url: string): Promise<unknown> {
   const res = await request.get(url).set('Accept', 'application/json');
   return res.body;
+}
+
+/**
+ * Normalize archive entry names using archiver-utils (a CJS dependency).
+ */
+export function normalizeArchiveEntry(inputPath: string): string {
+  return archiverUtils.sanitizePath(archiverUtils.unixifyPath(inputPath));
 }

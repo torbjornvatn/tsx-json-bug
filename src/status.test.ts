@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import http from 'node:http';
-import { fetchJson } from './status.ts';
+import { fetchJson, normalizeArchiveEntry } from './status.ts';
 
 /**
  * Spin up a temporary local HTTP server that returns `body` as JSON.
@@ -40,4 +40,9 @@ test('superagent: fetchJson handles nested JSON', async () => {
   } finally {
     close();
   }
+});
+
+test('archiver-utils: normalizeArchiveEntry strips unsafe prefixes', () => {
+  assert.equal(normalizeArchiveEntry('../../tmp/report.json'), 'tmp/report.json');
+  assert.equal(normalizeArchiveEntry('/var/log/app.log'), 'var/log/app.log');
 });

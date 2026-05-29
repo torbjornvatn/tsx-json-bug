@@ -10,6 +10,7 @@
     "test:pr": "node --test-reporter spec  --import=tsx-pr/esm      --test 'src/**/*.test.ts'"
   },
   "dependencies": {
+    "archiver-utils": "^5.0.2",
     "superagent": "^10.3.0"
   },
   "devDependencies": {
